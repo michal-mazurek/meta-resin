@@ -1,7 +1,8 @@
 [Unit]
 Description=Prepare OpenVPN Application On Resin
-Requires=mnt-conf.mount resin-device-uuid.service
-After=mnt-conf.mount resin-device-uuid.service
+Requires=mnt-conf.mount resin-device-uuid.service var-volatile.mount
+After=mnt-conf.mount resin-device-uuid.service var-volatile.mount
+AssertPathIsDirectory=/etc/openvpn/
 
 [Service]
 Type=oneshot
