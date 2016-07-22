@@ -7,6 +7,7 @@ SRC_URI = " \
     file://mnt-conf.mount \
     file://mnt-conforig.mount \
     file://temp-conf.service \
+    file://openvpn-conf.mount \
     "
 
 S = "${WORKDIR}"
@@ -30,6 +31,7 @@ do_install () {
             ${WORKDIR}/mnt-conf.mount \
             ${WORKDIR}/mnt-conforig.mount \
             ${WORKDIR}/temp-conf.service \
+            ${WORKDIR}/openvpn-conf.mount \
             ${D}${sysconfdir}/systemd/system
         sed -i -e 's,@BASE_BINDIR@,${base_bindir},g' \
             -e 's,@SBINDIR@,${sbindir},g' \
